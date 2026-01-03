@@ -13,6 +13,12 @@ import AAttendance from "./pages/admin/AAttendance";
 import LeaveApprovals from "./pages/admin/LeaveApproval";
 import Payroll from "./pages/admin/Payroll";
 import Employees from "./pages/admin/Employees";
+import ApplyLeave from "./pages/employee/ApplyLeave";
+import Reply from "./pages/employee/Reply";
+import AddEmployee from "./pages/admin/AddEmployee";
+import LeaveRequests from "./pages/admin/LeaveRequests";
+
+
 
 
 export default function App() {
@@ -33,8 +39,14 @@ export default function App() {
         <Route path="/employee" element={<EmployeeDashboard />} />
         <Route path="/employee/profile" element={<Profile />} />
         <Route path="/employee/attendance" element={<Attendance />} />
-        <Route path="/employee/leave" element={<Leave />} />
+        {/* <Route path="/employee/leave" element={<Leave />} /> */}
         <Route path="/employee/payroll" element={<Payroll />} />
+        <Route path="/employee/applyleave" element={<ApplyLeave />} />
+        <Route path="/employee/reply" element={<Reply />} />
+
+        
+
+        
 
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<Dashboard />} />
@@ -43,7 +55,9 @@ export default function App() {
           <Route path="leaves" element={<LeaveApprovals />} />
           <Route path="payroll" element={<Payroll />} />
         </Route>
-      
+        <Route path="/add-employee" element={<AddEmployee />} />
+        <Route path="/admin/leave-requests" element={<LeaveRequests />} />
+        
 
 
 
