@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Verification</title>
+</head>
+<body style="background:black;color:white;text-align:center;padding-top:100px;">
+
+<h2>Verifying your email...</h2>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const tokenFromLink = params.get("token");
+const savedToken = localStorage.getItem("pending_verification");
+
+if (tokenFromLink && tokenFromLink === savedToken) {
+    localStorage.setItem("email_verified", "true");
+    localStorage.removeItem("pending_verification");
+
+    document.body.innerHTML =
+      "<h2 style='color:#8e2de2'>Email Verified Successfully ✅</h2>";
+} else {
+    document.body.innerHTML =
+      "<h2 style='color:red'>Invalid or Expired Verification Link ❌</h2>";
+}
+</script>
+
+</body>
+</html>

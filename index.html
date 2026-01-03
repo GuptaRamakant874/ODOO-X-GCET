@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Odoo X GCET | Authentication</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="auth-container">
+    <h1>Odoo <span>X</span> GCET</h1>
+    <p class="subtitle">Create your GCET account</p>
+
+    <div class="tabs">
+        <button id="loginTab" class="active" onclick="showLogin()">Login</button>
+        <button id="signupTab" onclick="showSignup()">Sign Up</button>
+    </div>
+
+    <!-- SIGN UP -->
+    <div id="signupForm" class="form">
+        <input type="text" id="empId" placeholder="Employee ID">
+        <select id="role">
+            <option value="">Select Role</option>
+            <option>Employee</option>
+            <option>HR</option>
+        </select>
+        <input type="email" id="signupEmail" placeholder="Email">
+        <input type="password" id="signupPassword" placeholder="Password">
+        <small>Password: Min 8 chars, 1 Uppercase, 1 Number</small>
+        <button onclick="signup()">Create Account</button>
+        <p class="message" id="signupMsg"></p>
+    </div>
+
+    <!-- LOGIN -->
+    <div id="loginForm" class="form hidden">
+        <input type="email" id="loginEmail" placeholder="Email">
+        <input type="password" id="loginPassword" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p class="message" id="loginMsg"></p>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("c-fib7P_4HW-6ZsUU");
+  })();
+</script>
+<script src="script.js"></script>
+
+
+<script src="script.js"></script>
+</body>
+</html>
